@@ -14,7 +14,7 @@ function App() {
   const [lang, setLang] = useState<Language>("hi");
   const [headline, setHeadline] = useState("namaste");
   const [notes, setNotes] = useState(
-    "mera naam pratik hai aur mujhe react pasand hai.",
+    "mujhe react pasand hai.",
   );
   const [suggestionsEnabled, setSuggestionsEnabled] = useState(true);
 

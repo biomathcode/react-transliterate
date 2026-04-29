@@ -8,6 +8,8 @@
     "build:example": "pnpm --filter better-react-transliterate-vite-example build",
     "dev": "pnpm --filter better-react-transliterate-vite-example dev",
     "test": "pnpm --filter better-react-transliterate test",
-    "typecheck": "pnpm -r typecheck"
+    "typecheck": "pnpm -r typecheck",
+    "predeploy": "pnpm build:example",
+    "deploy": "gh-pages -d apps/example/dist"
   }
 }
