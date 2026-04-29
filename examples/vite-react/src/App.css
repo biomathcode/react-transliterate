@@ -1,0 +1,152 @@
+.page-shell {
+  display: grid;
+  gap: 2rem;
+}
+
+.hero-panel,
+.controls-card,
+.demo-card,
+.preview-card {
+  border: 1px solid rgba(39, 30, 18, 0.12);
+  background: rgba(255, 250, 244, 0.9);
+  box-shadow: 0 24px 60px rgba(77, 51, 25, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.hero-panel {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-radius: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #a04e16;
+}
+
+.hero-panel h1 {
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 0.95;
+}
+
+.lede {
+  max-width: 58ch;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  color: #604a36;
+}
+
+.playground {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 18rem) minmax(0, 1fr) minmax(0, 18rem);
+  align-items: start;
+}
+
+.controls-card,
+.demo-card,
+.preview-card {
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+}
+
+.demo-card {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.field label,
+.preview-label,
+.preview-key {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7e4c20;
+}
+
+.field select,
+.field input,
+.field textarea,
+.demo-card input,
+.demo-card textarea {
+  width: 100%;
+  border: 1px solid rgba(99, 67, 36, 0.16);
+  border-radius: 1rem;
+  background: #fffdfa;
+  color: #2f2418;
+  font: inherit;
+  padding: 0.9rem 1rem;
+  box-sizing: border-box;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+.field select:focus,
+.field input:focus,
+.field textarea:focus,
+.demo-card input:focus,
+.demo-card textarea:focus {
+  outline: none;
+  border-color: #c66a1f;
+  box-shadow: 0 0 0 4px rgba(198, 106, 31, 0.12);
+}
+
+.toggle {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1.25rem;
+  color: #4d3e2e;
+  font-weight: 600;
+}
+
+.toggle input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #c66a1f;
+}
+
+.hint-list {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  color: #6c5842;
+}
+
+.preview-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.preview-block {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #fffefb 0%, #f6eee5 100%);
+  border: 1px solid rgba(99, 67, 36, 0.12);
+}
+
+.preview-block p {
+  margin: 0.45rem 0 0;
+  white-space: pre-wrap;
+  color: #31251a;
+}
+
+@media (max-width: 1080px) {
+  .playground {
+    grid-template-columns: 1fr;
+  }
+}
