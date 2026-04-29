@@ -24,20 +24,6 @@ yarn add better-react-transliterate
 pnpm add better-react-transliterate
 ```
 
-## Import styles
-
-Import the package stylesheet once in your app entry:
-
-```tsx
-import "better-react-transliterate/styles.css";
-```
-
-If your bundler prefers a direct file path, this also works:
-
-```tsx
-import "better-react-transliterate/dist/index.css";
-```
-
 ## Usage
 
 ### Basic example
@@ -45,7 +31,6 @@ import "better-react-transliterate/dist/index.css";
 ```tsx
 import React, { useState } from "react";
 import { ReactTransliterate } from "better-react-transliterate";
-import "better-react-transliterate/styles.css";
 
 export default function App() {
   const [text, setText] = useState("");
@@ -66,7 +51,6 @@ export default function App() {
 ```tsx
 import React, { useState } from "react";
 import { ReactTransliterate } from "better-react-transliterate";
-import "better-react-transliterate/styles.css";
 
 export default function App() {
   const [text, setText] = useState("");
@@ -90,7 +74,6 @@ import {
   ReactTransliterate,
   Language,
 } from "better-react-transliterate";
-import "better-react-transliterate/styles.css";
 
 export default function App() {
   const [text, setText] = useState("");
@@ -115,7 +98,6 @@ import {
   ReactTransliterate,
   Language,
 } from "better-react-transliterate";
-import "better-react-transliterate/styles.css";
 
 export default function App() {
   const [text, setText] = useState("");
@@ -145,10 +127,6 @@ For frameworks such as Next.js:
 
 Example:
 
-```tsx
-// app/layout.tsx
-import "better-react-transliterate/styles.css";
-```
 
 ```tsx
 // app/components/transliteration-input.tsx
@@ -180,7 +158,6 @@ import {
   ReactTransliterate,
   TriggerKeys,
 } from "better-react-transliterate";
-import "better-react-transliterate/styles.css";
 
 export default function App() {
   const [text, setText] = useState("");
@@ -215,64 +192,64 @@ const suggestions = await getTransliterateSuggestions("namaste", {
 
 ## Props
 
-| Prop                             | Required | Default                                     | Description |
-| -------------------------------- | -------- | ------------------------------------------- | ----------- |
-| `onChangeText`                   | Yes      | -                                           | Listener for the current text value. |
-| `value`                          | Yes      | -                                           | Controlled value passed to the component. |
-| `enabled`                        | No       | `true`                                      | Control whether suggestions are shown. |
-| `renderComponent`                | No       | `(props) => <input {...props} />`           | Custom input component renderer. |
-| `lang`                           | No       | `"hi"`                                      | Target language code. |
-| `maxOptions`                     | No       | `5`                                         | Maximum number of suggestions to show. |
-| `offsetY`                        | No       | `10`                                        | Extra vertical space below the caret. |
-| `offsetX`                        | No       | `0`                                         | Extra horizontal space from the caret. |
-| `containerClassName`             | No       | `""`                                        | Class name for the outer wrapper. |
-| `containerStyles`                | No       | `{}`                                        | Inline styles for the outer wrapper. |
-| `activeItemStyles`               | No       | `{}`                                        | Inline styles for the active suggestion item. |
-| `hideSuggestionBoxOnMobileDevices` | No     | `false`                                     | Hide suggestions on smaller touch devices. |
-| `hideSuggestionBoxBreakpoint`    | No       | `450`                                       | Width threshold used with `hideSuggestionBoxOnMobileDevices`. |
-| `triggerKeys`                    | No       | `KEY_SPACE`, `KEY_ENTER`, `KEY_RETURN`, `KEY_TAB` | Keys that commit the current suggestion. |
-| `insertCurrentSelectionOnBlur`   | No       | `true`                                      | Insert the current selection on blur. |
-| `showCurrentWordAsLastSuggestion`| No       | `true`                                      | Show the raw typed word as the last option. |
+| Prop                               | Required | Default                                           | Description                                                   |
+| ---------------------------------- | -------- | ------------------------------------------------- | ------------------------------------------------------------- |
+| `onChangeText`                     | Yes      | -                                                 | Listener for the current text value.                          |
+| `value`                            | Yes      | -                                                 | Controlled value passed to the component.                     |
+| `enabled`                          | No       | `true`                                            | Control whether suggestions are shown.                        |
+| `renderComponent`                  | No       | `(props) => <input {...props} />`                 | Custom input component renderer.                              |
+| `lang`                             | No       | `"hi"`                                            | Target language code.                                         |
+| `maxOptions`                       | No       | `5`                                               | Maximum number of suggestions to show.                        |
+| `offsetY`                          | No       | `10`                                              | Extra vertical space below the caret.                         |
+| `offsetX`                          | No       | `0`                                               | Extra horizontal space from the caret.                        |
+| `containerClassName`               | No       | `""`                                              | Class name for the outer wrapper.                             |
+| `containerStyles`                  | No       | `{}`                                              | Inline styles for the outer wrapper.                          |
+| `activeItemStyles`                 | No       | `{}`                                              | Inline styles for the active suggestion item.                 |
+| `hideSuggestionBoxOnMobileDevices` | No       | `false`                                           | Hide suggestions on smaller touch devices.                    |
+| `hideSuggestionBoxBreakpoint`      | No       | `450`                                             | Width threshold used with `hideSuggestionBoxOnMobileDevices`. |
+| `triggerKeys`                      | No       | `KEY_SPACE`, `KEY_ENTER`, `KEY_RETURN`, `KEY_TAB` | Keys that commit the current suggestion.                      |
+| `insertCurrentSelectionOnBlur`     | No       | `true`                                            | Insert the current selection on blur.                         |
+| `showCurrentWordAsLastSuggestion`  | No       | `true`                                            | Show the raw typed word as the last option.                   |
 
 ## Supported languages
 
-| Language              | Code     |
-| --------------------- | -------- |
-| Amharic               | `am`     |
-| Arabic                | `ar`     |
-| Bangla                | `bn`     |
-| Belarusian            | `be`     |
-| Bulgarian             | `bg`     |
+| Language              | Code       |
+| --------------------- | ---------- |
+| Amharic               | `am`       |
+| Arabic                | `ar`       |
+| Bangla                | `bn`       |
+| Belarusian            | `be`       |
+| Bulgarian             | `bg`       |
 | Chinese (Hong Kong)   | `yue-hant` |
-| Chinese (Simplified)  | `zh`     |
-| Chinese (Traditional) | `zh-hant` |
-| French                | `fr`     |
-| German                | `de`     |
-| Greek                 | `el`     |
-| Gujarati              | `gu`     |
-| Hebrew                | `he`     |
-| Hindi                 | `hi`     |
-| Italian               | `it`     |
-| Japanese              | `ja`     |
-| Kannada               | `kn`     |
-| Malayalam             | `ml`     |
-| Marathi               | `mr`     |
-| Nepali                | `ne`     |
-| Odia                  | `or`     |
-| Persian               | `fa`     |
-| Portuguese (Brazil)   | `pt`     |
-| Punjabi               | `pa`     |
-| Russian               | `ru`     |
-| Sanskrit              | `sa`     |
-| Serbian               | `sr`     |
-| Sinhala               | `si`     |
-| Spanish               | `es`     |
-| Tamil                 | `ta`     |
-| Telugu                | `te`     |
-| Tigrinya              | `ti`     |
-| Ukrainian             | `uk`     |
-| Urdu                  | `ur`     |
-| Vietnamese            | `vi`     |
+| Chinese (Simplified)  | `zh`       |
+| Chinese (Traditional) | `zh-hant`  |
+| French                | `fr`       |
+| German                | `de`       |
+| Greek                 | `el`       |
+| Gujarati              | `gu`       |
+| Hebrew                | `he`       |
+| Hindi                 | `hi`       |
+| Italian               | `it`       |
+| Japanese              | `ja`       |
+| Kannada               | `kn`       |
+| Malayalam             | `ml`       |
+| Marathi               | `mr`       |
+| Nepali                | `ne`       |
+| Odia                  | `or`       |
+| Persian               | `fa`       |
+| Portuguese (Brazil)   | `pt`       |
+| Punjabi               | `pa`       |
+| Russian               | `ru`       |
+| Sanskrit              | `sa`       |
+| Serbian               | `sr`       |
+| Sinhala               | `si`       |
+| Spanish               | `es`       |
+| Tamil                 | `ta`       |
+| Telugu                | `te`       |
+| Tigrinya              | `ti`       |
+| Ukrainian             | `uk`       |
+| Urdu                  | `ur`       |
+| Vietnamese            | `vi`       |
 
 ## Local example
 
@@ -280,4 +257,4 @@ The [`examples/vite-react`](../../examples/vite-react) app is scaffolded with Vi
 
 ## License
 
-MIT © [burhanuday](https://github.com/burhanuday)
+MIT © [biomathcode](https://github.com/biomathcode)
