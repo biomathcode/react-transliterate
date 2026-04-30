@@ -1,6 +1,6 @@
 {
   "name": "better-react-transliterate",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "SSR-friendly transliteration input for React",
   "author": "biomathcode (sharma.pratik2016@gmail.com)",
   "license": "MIT",

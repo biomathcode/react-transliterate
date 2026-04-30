@@ -1,32 +1,36 @@
 import * as React from "react";
 import { Language } from "../types/Language";
 
-type SharedFormElement = HTMLInputElement | HTMLTextAreaElement;
+export type SharedFormElement =
+  | HTMLInputElement
+  | HTMLTextAreaElement;
 
-type SharedInputProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  "onBlur" | "onChange" | "onKeyDown" | "ref" | "value"
-> &
-  Omit<
+type BaseInputProps<T extends SharedFormElement> =
+  T extends HTMLInputElement
+  ? Omit<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    "onBlur" | "onChange" | "onKeyDown" | "ref" | "value"
+  >
+  : Omit<
     React.TextareaHTMLAttributes<HTMLTextAreaElement>,
     "onBlur" | "onChange" | "onKeyDown" | "ref" | "value"
   >;
 
-export type RenderComponentProps = SharedInputProps & {
-  onBlur?: (event: React.FocusEvent<SharedFormElement>) => void;
-  onChange?: (event: React.FormEvent<SharedFormElement>) => void;
-  onKeyDown?: (event: React.KeyboardEvent<SharedFormElement>) => void;
-  ref: React.Ref<SharedFormElement>;
+export type RenderComponentProps<
+  T extends SharedFormElement = HTMLInputElement
+> = BaseInputProps<T> & {
+  onBlur?: (event: React.FocusEvent<T>) => void;
+  onChange?: (event: React.FormEvent<T>) => void;
+  onKeyDown?: (event: React.KeyboardEvent<T>) => void;
+  ref: React.Ref<T>;
   value: string;
 };
 
-export interface ReactTransliterateProps extends SharedInputProps {
-  /**
-   * Custom input/textarea renderer
-   * Default: <input />
-   */
+export type ReactTransliterateProps<
+  T extends SharedFormElement = HTMLInputElement
+> = BaseInputProps<T> & {
   renderComponent?: (
-    props: RenderComponentProps,
+    props: RenderComponentProps<T>
   ) => React.ReactElement;
 
   /**
